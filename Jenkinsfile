@@ -34,6 +34,17 @@ pipeline {
                 }
             }
         }
+   
+        stage ('CodeQuality'){
+          steps {
+              dir('/Users/nickgulrajani/CLDNATIVEJUB/GITHUB/cargotracker/src/test/java/net/java/cargotracker/application')
+           {
+              sh "pwd"
+              sh "/usr/local/bin/sonar-scanner-4.2.0.1873-macosx/bin/sonar-scanner" 
+              
+            }
+          }
+      }
 
         stage("mvn build") {
             steps {
