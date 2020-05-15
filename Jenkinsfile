@@ -56,6 +56,19 @@ pipeline {
             }
         }
 
+
+ 	stage ('Vulnerability Test'){
+          steps{
+              dir('/Users/nickgulrajani/CLDNATIVEJUB/GITHUB/cargotracker')
+            {
+              sh "pwd"
+              sh "/usr/local/bin/snyk monitor"
+              snykSecurity organisation: 'nickgulrajani', snykInstallation: 'snyk', snykTokenId: 'snyktoken'
+            }
+      }
+      
+   }
+
         stage("publish to nexus") {
             steps {
                 script {
