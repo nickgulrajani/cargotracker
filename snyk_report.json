@@ -1,0 +1,451 @@
+{
+  "vulnerabilities": [
+    {
+      "CVSSv3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "alternativeIds": [],
+      "creationTime": "2018-03-05T09:24:20.488000Z",
+      "credit": [
+        "Unknown"
+      ],
+      "cvssScore": 6.5,
+      "description": "## Overview\n[`org.primefaces:primefaces`](https://primefaces.org) is UI library in Java EE Ecosystem\n\nAffected versions of [`org.primefaces:primefaces`] are vulnerable to Cross-site Scripting (XSS).\n\n## Details\nA cross-site scripting attack occurs when the attacker tricks a legitimate web-based application or site to accept a request as originating from a trusted source.\r\n\r\nThis is done by escaping the context of the web application; the web application then delivers that data to its users along with other trusted dynamic content, without validating it. The browser unknowingly executes malicious script on the client side (through client-side languages; usually JavaScript or HTML)  in order to perform actions that are otherwise typically blocked by the browser’s Same Origin Policy.\r\n\r\nֿInjecting malicious code is the most prevalent manner by which XSS is exploited; for this reason, escaping characters in order to prevent this manipulation is the top method for securing code against this vulnerability.\r\n\r\nEscaping means that the application is coded to mark key characters, and particularly key characters included in user input, to prevent those characters from being interpreted in a dangerous context. For example, in HTML, `<` can be coded as  `&lt`; and `>` can be coded as `&gt`; in order to be interpreted and displayed as themselves in text, while within the code itself, they are used for HTML tags. If malicious content is injected into an application that escapes special characters and that malicious content uses `<` and `>` as HTML tags, those characters are nonetheless not interpreted as HTML tags by the browser if they’ve been correctly escaped in the application code and in this way the attempted attack is diverted.\r\n \r\nThe most prominent use of XSS is to steal cookies (source: OWASP HttpOnly) and hijack user sessions, but XSS exploits have been used to expose sensitive information, enable access to privileged services and functionality and deliver malware. \r\n\r\n### Types of attacks\r\nThere are a few methods by which XSS can be manipulated:\r\n\r\n|Type|Origin|Description|\r\n|--|--|--|\r\n|**Stored**|Server|The malicious code is inserted in the application (usually as a link) by the attacker. The code is activated every time a user clicks the link.|\r\n|**Reflected**|Server|The attacker delivers a malicious link externally from the vulnerable web site application to a user. When clicked, malicious code is sent to the vulnerable web site, which reflects the attack back to the user’s browser.| \r\n|**DOM-based**|Client|The attacker forces the user’s browser to render a malicious page. The data in the page itself delivers the cross-site scripting data.|\r\n|**Mutated**| |The attacker injects code that appears safe, but is then rewritten and modified by the browser, while parsing the markup. An example is rebalancing unclosed quotation marks or even adding quotation marks to unquoted parameters.|\r\n\r\n### Affected environments\r\nThe following environments are susceptible to an XSS attack:\r\n\r\n* Web servers\r\n* Application servers\r\n* Web application environments\r\n\r\n### How to prevent\r\nThis section describes the top best practices designed to specifically protect your code: \r\n\r\n* Sanitize data input in an HTTP request before reflecting it back, ensuring all data is validated, filtered or escaped before echoing anything back to the user, such as the values of query parameters during searches. \r\n* Convert special characters such as `?`, `&`, `/`, `<`, `>` and spaces to their respective HTML or URL encoded equivalents. \r\n* Give users the option to disable client-side scripts.\r\n* Redirect invalid requests.\r\n* Detect simultaneous logins, including those from two separate IP addresses, and invalidate those sessions.\r\n* Use and enforce a Content Security Policy (source: Wikipedia) to disable any features that might be manipulated for an XSS attack.\r\n* Read the documentation for any of the libraries referenced in your code to understand which elements allow for embedded HTML.\n\n\n## Remediation\nUpgrade `org.primefaces:primefaces` to version 6.2 or higher.\n\n## References\n- [GitHub PR](https://github.com/primefaces/primefaces/issues/1439)\n- [GitHub Issue](https://github.com/primefaces/primefaces/commit/774be67988c555bebe1cb7446c1d0715ad492b41)\n",
+      "disclosureTime": "2017-03-31T21:00:00Z",
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "6.2"
+      ],
+      "functions": [],
+      "functions_new": [],
+      "id": "SNYK-JAVA-ORGPRIMEFACES-31642",
+      "identifiers": {
+        "CVE": [],
+        "CWE": [
+          "CWE-79"
+        ]
+      },
+      "language": "java",
+      "mavenModuleName": {
+        "artifactId": "primefaces",
+        "groupId": "org.primefaces"
+      },
+      "modificationTime": "2019-06-02T10:25:25.139967Z",
+      "moduleName": "org.primefaces:primefaces",
+      "packageManager": "maven",
+      "packageName": "org.primefaces:primefaces",
+      "patches": [],
+      "publicationTime": "2018-03-06T11:16:29.282000Z",
+      "references": [
+        {
+          "title": "GitHub Commit",
+          "url": "https://github.com/primefaces/primefaces/commit/774be67988c555bebe1cb7446c1d0715ad492b41"
+        },
+        {
+          "title": "GitHub Issue",
+          "url": "https://github.com/primefaces/primefaces/issues/1439"
+        }
+      ],
+      "semver": {
+        "vulnerable": [
+          "[,6.2)"
+        ]
+      },
+      "severity": "medium",
+      "title": "Cross-site Scripting (XSS)",
+      "from": [
+        "net.java:cargo-tracker@1.0",
+        "org.primefaces:primefaces@5.2"
+      ],
+      "upgradePath": [
+        false,
+        "org.primefaces:primefaces@6.2"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "org.primefaces:primefaces",
+      "version": "5.2"
+    },
+    {
+      "CVSSv3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:N/A:N",
+      "alternativeIds": [],
+      "creationTime": "2018-03-05T09:21:50.217000Z",
+      "credit": [
+        "Unknown"
+      ],
+      "cvssScore": 6.5,
+      "description": "## Overview\n[`org.primefaces:primefaces`](https://primefaces.org) is an UI library in Java EE Ecosystem.\n\nAffected versions of [`org.primefaces:primefaces`] are vulnerable to Cross-site Scripting (XSS).\n\n## Details\nA cross-site scripting attack occurs when the attacker tricks a legitimate web-based application or site to accept a request as originating from a trusted source.\r\n\r\nThis is done by escaping the context of the web application; the web application then delivers that data to its users along with other trusted dynamic content, without validating it. The browser unknowingly executes malicious script on the client side (through client-side languages; usually JavaScript or HTML)  in order to perform actions that are otherwise typically blocked by the browser’s Same Origin Policy.\r\n\r\nֿInjecting malicious code is the most prevalent manner by which XSS is exploited; for this reason, escaping characters in order to prevent this manipulation is the top method for securing code against this vulnerability.\r\n\r\nEscaping means that the application is coded to mark key characters, and particularly key characters included in user input, to prevent those characters from being interpreted in a dangerous context. For example, in HTML, `<` can be coded as  `&lt`; and `>` can be coded as `&gt`; in order to be interpreted and displayed as themselves in text, while within the code itself, they are used for HTML tags. If malicious content is injected into an application that escapes special characters and that malicious content uses `<` and `>` as HTML tags, those characters are nonetheless not interpreted as HTML tags by the browser if they’ve been correctly escaped in the application code and in this way the attempted attack is diverted.\r\n \r\nThe most prominent use of XSS is to steal cookies (source: OWASP HttpOnly) and hijack user sessions, but XSS exploits have been used to expose sensitive information, enable access to privileged services and functionality and deliver malware. \r\n\r\n### Types of attacks\r\nThere are a few methods by which XSS can be manipulated:\r\n\r\n|Type|Origin|Description|\r\n|--|--|--|\r\n|**Stored**|Server|The malicious code is inserted in the application (usually as a link) by the attacker. The code is activated every time a user clicks the link.|\r\n|**Reflected**|Server|The attacker delivers a malicious link externally from the vulnerable web site application to a user. When clicked, malicious code is sent to the vulnerable web site, which reflects the attack back to the user’s browser.| \r\n|**DOM-based**|Client|The attacker forces the user’s browser to render a malicious page. The data in the page itself delivers the cross-site scripting data.|\r\n|**Mutated**| |The attacker injects code that appears safe, but is then rewritten and modified by the browser, while parsing the markup. An example is rebalancing unclosed quotation marks or even adding quotation marks to unquoted parameters.|\r\n\r\n### Affected environments\r\nThe following environments are susceptible to an XSS attack:\r\n\r\n* Web servers\r\n* Application servers\r\n* Web application environments\r\n\r\n### How to prevent\r\nThis section describes the top best practices designed to specifically protect your code: \r\n\r\n* Sanitize data input in an HTTP request before reflecting it back, ensuring all data is validated, filtered or escaped before echoing anything back to the user, such as the values of query parameters during searches. \r\n* Convert special characters such as `?`, `&`, `/`, `<`, `>` and spaces to their respective HTML or URL encoded equivalents. \r\n* Give users the option to disable client-side scripts.\r\n* Redirect invalid requests.\r\n* Detect simultaneous logins, including those from two separate IP addresses, and invalidate those sessions.\r\n* Use and enforce a Content Security Policy (source: Wikipedia) to disable any features that might be manipulated for an XSS attack.\r\n* Read the documentation for any of the libraries referenced in your code to understand which elements allow for embedded HTML.\n\n\n## Remediation\nUpgrade `org.primefaces:primefaces` to version 6.2 or higher.\n\n## References\n- [GitHub PR](https://github.com/primefaces/primefaces/issues/1194)\n- [GitHub Issue](https://github.com/primefaces/primefaces/pull/2904/commits/e8c0baae853c48bb1fb2d39833c5b2b6af837616)\n",
+      "disclosureTime": "2017-11-07T22:00:00Z",
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "6.2"
+      ],
+      "functions": [],
+      "functions_new": [],
+      "id": "SNYK-JAVA-ORGPRIMEFACES-31643",
+      "identifiers": {
+        "CVE": [],
+        "CWE": [
+          "CWE-79"
+        ]
+      },
+      "language": "java",
+      "mavenModuleName": {
+        "artifactId": "primefaces",
+        "groupId": "org.primefaces"
+      },
+      "modificationTime": "2019-06-02T10:25:25.861804Z",
+      "moduleName": "org.primefaces:primefaces",
+      "packageManager": "maven",
+      "packageName": "org.primefaces:primefaces",
+      "patches": [],
+      "publicationTime": "2018-03-06T11:16:29.365000Z",
+      "references": [
+        {
+          "title": "GitHub Commit",
+          "url": "https://github.com/primefaces/primefaces/pull/2904/commits/e8c0baae853c48bb1fb2d39833c5b2b6af837616"
+        },
+        {
+          "title": "GitHub Issue",
+          "url": "https://github.com/primefaces/primefaces/issues/1194"
+        }
+      ],
+      "semver": {
+        "vulnerable": [
+          "[,6.2)"
+        ]
+      },
+      "severity": "medium",
+      "title": "Cross-site Scripting (XSS)",
+      "from": [
+        "net.java:cargo-tracker@1.0",
+        "org.primefaces:primefaces@5.2"
+      ],
+      "upgradePath": [
+        false,
+        "org.primefaces:primefaces@6.2"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "org.primefaces:primefaces",
+      "version": "5.2"
+    },
+    {
+      "CVSSv3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H/E:H/RL:O/RC:C",
+      "alternativeIds": [],
+      "creationTime": "2018-01-22T15:40:15.119000Z",
+      "credit": [
+        "Giorgio Fedon"
+      ],
+      "cvssScore": 9.8,
+      "description": "## Overview\r\n[`org.primefaces:primefaces`](https://www.primefaces.org/) is a UI library for the Java EE Ecosystem.\r\n\r\nAffected versions of this package are vulnerable to Arbitrary Code Execution due to a weak encryption flaw. An unauthenticated user  may be able to inject arbitrary Expression Language code to the `PrimeFaces` custom EL parser.\r\n\r\n## Remediation\r\nUpgrade `org.primefaces:primefaces` to version 6.0 or higher.\n\n## References\n- [Cryptosense Blog](https://cryptosense.com/weak-encryption-flaw-in-primefaces/)\n- [Exploit DB](https://www.exploit-db.com/exploits/43733)\n- [Exploit DB](https://www.exploit-db.com/exploits/43733/)\n- [Giorgio Fedon's Blog](http://blog.mindedsecurity.com/2016/02/rce-in-oracle-netbeans-opensource.html)\n- [GitHub Commit](https://github.com/primefaces/primefaces/commit/26e44eb7962cbdb6aa2f47eca0f230f3274358f0)\n- [GitHub Issue](https://github.com/primefaces/primefaces/issues/1152)\n",
+      "disclosureTime": "2016-02-15T15:40:15Z",
+      "exploit": "High",
+      "fixedIn": [
+        "6.0"
+      ],
+      "functions": [
+        {
+          "functionId": {
+            "className": "StreamedContentHandler",
+            "filePath": "org/primefaces/application/resource/StreamedContentHandler.java",
+            "functionName": "handle"
+          },
+          "version": [
+            "[5.1, 6.0)"
+          ]
+        },
+        {
+          "functionId": {
+            "className": "DynamicResourceBuilder",
+            "filePath": "org/primefaces/util/DynamicResourceBuilder.java",
+            "functionName": "build"
+          },
+          "version": [
+            "[5.1, 6.0)"
+          ]
+        }
+      ],
+      "functions_new": [
+        {
+          "functionId": {
+            "className": "org.primefaces.application.resource.StreamedContentHandler",
+            "functionName": "handle"
+          },
+          "version": [
+            "[5.1, 6.0)"
+          ]
+        },
+        {
+          "functionId": {
+            "className": "org.primefaces.util.DynamicResourceBuilder",
+            "functionName": "build"
+          },
+          "version": [
+            "[5.1, 6.0)"
+          ]
+        }
+      ],
+      "id": "SNYK-JAVA-ORGPRIMEFACES-32045",
+      "identifiers": {
+        "CVE": [
+          "CVE-2017-1000486"
+        ],
+        "CWE": [
+          "CWE-326"
+        ]
+      },
+      "language": "java",
+      "mavenModuleName": {
+        "artifactId": "primefaces",
+        "groupId": "org.primefaces"
+      },
+      "modificationTime": "2019-04-01T11:39:24.051231Z",
+      "moduleName": "org.primefaces:primefaces",
+      "packageManager": "maven",
+      "packageName": "org.primefaces:primefaces",
+      "patches": [],
+      "publicationTime": "2018-01-23T13:17:24Z",
+      "references": [
+        {
+          "title": "Cryptosense Blog",
+          "url": "https://cryptosense.com/weak-encryption-flaw-in-primefaces/"
+        },
+        {
+          "title": "Exploit DB",
+          "url": "https://www.exploit-db.com/exploits/43733"
+        },
+        {
+          "title": "Exploit DB",
+          "url": "https://www.exploit-db.com/exploits/43733/"
+        },
+        {
+          "title": "Giorgio Fedon's Blog",
+          "url": "http://blog.mindedsecurity.com/2016/02/rce-in-oracle-netbeans-opensource.html"
+        },
+        {
+          "title": "GitHub Commit",
+          "url": "https://github.com/primefaces/primefaces/commit/26e44eb7962cbdb6aa2f47eca0f230f3274358f0"
+        },
+        {
+          "title": "GitHub Issue",
+          "url": "https://github.com/primefaces/primefaces/issues/1152"
+        }
+      ],
+      "semver": {
+        "vulnerable": [
+          "[5.0, 6.0)"
+        ]
+      },
+      "severity": "high",
+      "title": "Arbitrary Code Execution",
+      "from": [
+        "net.java:cargo-tracker@1.0",
+        "org.primefaces:primefaces@5.2"
+      ],
+      "upgradePath": [
+        false,
+        "org.primefaces:primefaces@6.0"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "org.primefaces:primefaces",
+      "version": "5.2"
+    },
+    {
+      "CVSSv3": "CVSS:3.0/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N",
+      "alternativeIds": [],
+      "creationTime": "2019-01-30T17:22:47.018554Z",
+      "credit": [
+        "cnsgithub"
+      ],
+      "cvssScore": 5.9,
+      "description": "## Overview\n\n[org.primefaces:primefaces](https://primefaces.googlecode.com/svn/primefaces/trunk) is a ultimate component suite for JavaServer Faces.\n\n\nAffected versions of this package are vulnerable to Information Exposure\nbecause `{{h:inputText maxlength}}` is validated on client side only. However, client side validation may be bypassed easily.\n\n## Remediation\n\nUpgrade `org.primefaces:primefaces` to version 7.0.RC1 or higher.\n\n\n## References\n\n- [Apache Jira Issue](https://issues.apache.org/jira/browse/MYFACES-4279)\n\n- [GitHub Commit](https://github.com/primefaces/primefaces/commit/1b0e36ec1d190e394317e2aa1bf7bdace59f5704)\n\n- [GitHub Issue](https://github.com/primefaces/primefaces/issues/4420)\n\n- [POC](https://github.com/cnsgithub/mojarra-ajax/tree/myfaces)\n",
+      "disclosureTime": "2019-01-14T09:32:28Z",
+      "exploit": "Not Defined",
+      "fixedIn": [
+        "7.0.RC1"
+      ],
+      "functions": [],
+      "functions_new": [],
+      "id": "SNYK-JAVA-ORGPRIMEFACES-73632",
+      "identifiers": {
+        "CVE": [],
+        "CWE": [
+          "CWE-200"
+        ]
+      },
+      "language": "java",
+      "mavenModuleName": {
+        "artifactId": "primefaces",
+        "groupId": "org.primefaces"
+      },
+      "modificationTime": "2019-03-24T18:22:11.998623Z",
+      "moduleName": "org.primefaces:primefaces",
+      "packageManager": "maven",
+      "packageName": "org.primefaces:primefaces",
+      "patches": [],
+      "publicationTime": "2019-01-14T10:34:49Z",
+      "references": [
+        {
+          "title": "Apache Jira Issue",
+          "url": "https://issues.apache.org/jira/browse/MYFACES-4279"
+        },
+        {
+          "title": "GitHub Commit",
+          "url": "https://github.com/primefaces/primefaces/commit/1b0e36ec1d190e394317e2aa1bf7bdace59f5704"
+        },
+        {
+          "title": "GitHub Issue",
+          "url": "https://github.com/primefaces/primefaces/issues/4420"
+        },
+        {
+          "title": "POC",
+          "url": "https://github.com/cnsgithub/mojarra-ajax/tree/myfaces"
+        }
+      ],
+      "semver": {
+        "vulnerable": [
+          "[0,7.0.RC1)"
+        ]
+      },
+      "severity": "medium",
+      "title": "Information Exposure",
+      "from": [
+        "net.java:cargo-tracker@1.0",
+        "org.primefaces:primefaces@5.2"
+      ],
+      "upgradePath": [
+        false,
+        "org.primefaces:primefaces@7.0"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "org.primefaces:primefaces",
+      "version": "5.2"
+    }
+  ],
+  "ok": false,
+  "dependencyCount": 25,
+  "org": "nickgulrajani",
+  "policy": "# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.\nversion: v1.14.1\nignore: {}\npatch: {}\n",
+  "isPrivate": true,
+  "licensesPolicy": {
+    "severities": {},
+    "orgLicenseRules": {
+      "AGPL-1.0": {
+        "licenseType": "AGPL-1.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "AGPL-3.0": {
+        "licenseType": "AGPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "Artistic-1.0": {
+        "licenseType": "Artistic-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "Artistic-2.0": {
+        "licenseType": "Artistic-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CDDL-1.0": {
+        "licenseType": "CDDL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "CPOL-1.02": {
+        "licenseType": "CPOL-1.02",
+        "severity": "high",
+        "instructions": ""
+      },
+      "EPL-1.0": {
+        "licenseType": "EPL-1.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "GPL-2.0": {
+        "licenseType": "GPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "GPL-3.0": {
+        "licenseType": "GPL-3.0",
+        "severity": "high",
+        "instructions": ""
+      },
+      "LGPL-2.0": {
+        "licenseType": "LGPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-2.1": {
+        "licenseType": "LGPL-2.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "LGPL-3.0": {
+        "licenseType": "LGPL-3.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-1.1": {
+        "licenseType": "MPL-1.1",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MPL-2.0": {
+        "licenseType": "MPL-2.0",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "MS-RL": {
+        "licenseType": "MS-RL",
+        "severity": "medium",
+        "instructions": ""
+      },
+      "SimPL-2.0": {
+        "licenseType": "SimPL-2.0",
+        "severity": "high",
+        "instructions": ""
+      }
+    }
+  },
+  "packageManager": "maven",
+  "ignoreSettings": null,
+  "summary": "4 vulnerable dependency paths",
+  "remediation": {
+    "unresolved": [],
+    "upgrade": {
+      "org.primefaces:primefaces@5.2": {
+        "upgradeTo": "org.primefaces:primefaces@7.0",
+        "upgrades": [
+          "org.primefaces:primefaces@5.2",
+          "org.primefaces:primefaces@5.2",
+          "org.primefaces:primefaces@5.2",
+          "org.primefaces:primefaces@5.2"
+        ],
+        "vulns": [
+          "SNYK-JAVA-ORGPRIMEFACES-73632",
+          "SNYK-JAVA-ORGPRIMEFACES-31642",
+          "SNYK-JAVA-ORGPRIMEFACES-31643",
+          "SNYK-JAVA-ORGPRIMEFACES-32045"
+        ]
+      }
+    },
+    "patch": {},
+    "ignore": {},
+    "pin": {}
+  },
+  "filesystemPolicy": false,
+  "filtered": {
+    "ignore": [],
+    "patch": []
+  },
+  "uniqueCount": 4,
+  "projectName": "net.java:cargo-tracker",
+  "displayTargetFile": "pom.xml",
+  "path": "/Users/nickgulrajani/CLDNATIVEJUB/GITHUB/cargotracker"
+}

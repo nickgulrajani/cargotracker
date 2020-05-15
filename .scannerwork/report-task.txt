@@ -2,5 +2,5 @@ projectKey=NexusKey
 serverUrl=http://localhost:9000
 serverVersion=7.5.0.20543
 dashboardUrl=http://localhost:9000/dashboard?id=NexusKey
-ceTaskId=AXIYuLXF12fnygmEbxhu
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXIYuLXF12fnygmEbxhu
+ceTaskId=AXIYvLsp12fnygmEbxhv
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXIYvLsp12fnygmEbxhv
