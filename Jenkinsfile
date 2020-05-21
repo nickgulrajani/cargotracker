@@ -18,7 +18,7 @@ pipeline {
         NEXUS_PROTOCOL = "http"
         // Where your Nexus is running. 'nexus-3' is defined in the docker-compose file
         // NEXUS_URL = "nexus-3:8081"
-	   NEXUS_URL = "localhost:8081"
+	   NEXUS_URL = "localhost:8082"
         // Repository where we will upload the artifact
         NEXUS_REPOSITORY = "repository-example"
         // Jenkins credential id to authenticate to Nexus OSS
@@ -37,11 +37,10 @@ pipeline {
    
         stage ('CodeQuality'){
           steps {
-              dir('/Users/nickgulrajani/CLDNATIVEJUB/GITHUB/cargotracker')
+              dir('/Users/gulrajan/GITHUB/cargotracker')
            {
               sh "pwd"
-              sh "/usr/local/bin/sonar-scanner-4.2.0.1873-macosx/bin/sonar-scanner" 
-              
+              sh "/opt/sonar-scanner-4.3.0.2102-macosx/bin/sonar-scanner"
             }
           }
       }
